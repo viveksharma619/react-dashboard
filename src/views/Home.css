@@ -1,0 +1,11 @@
+.content_container{
+    background-color: #fff;
+    margin: 20px;
+    min-height: 100vh;
+    padding: 20px;
+}
+.home_card{
+    border: 1px solid #bfbfbf;
+    margin: 10px;
+    min-height: 270px;
+}

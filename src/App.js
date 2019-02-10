@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
+
+import Routes from './Route';
+
+import logo from './react-logo.png';
+
+import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
 import './App.css';
+
+import {Layout} from 'antd';
+
+const {Header} = Layout;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Router>
+          <Layout>
+            <Header>
+              <div className="navbar_logo">
+                <img src={logo} alt="React Dashboard" />
+                <h4>React Dashboard</h4>
+              </div>
+            </Header>
+            <Routes/>
+          </Layout>
+        </Router>
       </div>
     );
   }
