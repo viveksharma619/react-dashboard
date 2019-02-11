@@ -4,21 +4,22 @@ import {Bar, Doughnut} from 'react-chartjs-2';
 
 import './Home.css';
 
-const {Sider, Content} = Layout;
+import { Link } from 'react-router-dom';
 
+const { Sider, Content } = Layout;
 
 const data = [
     {
-      title: 'Title 1',
+      title: 'Sales',
     },
     {
-      title: 'Title 2',
+      title: 'Marketing',
     },
     {
-      title: 'Title 3',
+      title: 'User',
     },
     {
-      title: 'Title 4',
+      title: 'Performance',
     },
 ];
 
@@ -105,9 +106,7 @@ class Home extends Component{
                     <Sider width={300}>
                         <List itemLayout="horizontal" dataSource={data}  renderItem={item => (
                             <List.Item>
-                                <List.Item.Meta
-                                    title={item.title}
-                                />
+                                <Link to={`/sale?title=${item.title}`} className="menu_link">{item.title}</Link>
                             </List.Item>
                         )}
                         />

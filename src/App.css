@@ -12,13 +12,14 @@
 .ant-list-item-meta-content{
     cursor: pointer;
 }
-.ant-list-item-meta-content h4{
-    color: #fff;
-    font-weight: 600;
-    margin-left: 20px;
+.ant-layout-sider{
+    background-color: #fff;
 }
-.ant-list-item-meta-content h4:hover{
-    font-weight: 900;
+.ant-list-item{
+    padding: 30px 0;
+}
+.ant-list-item:hover{
+    background-color: #eaeaea;
 }
 
 @keyframes rotate {
@@ -32,4 +33,11 @@
         -webkit-transform: rotate(360deg); /* Safari */
         transform: rotate(360deg);
     }
+}
+
+.content_container{
+    background-color: #fff;
+    margin: 20px;
+    min-height: 100vh;
+    padding: 20px;
 }
