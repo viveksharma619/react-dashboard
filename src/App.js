@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
+  Link
 } from 'react-router-dom';
 
 import Routes from './Route';
@@ -21,10 +22,15 @@ class App extends Component {
         <Router>
           <Layout>
             <Header>
-              <div className="navbar_logo">
+              <Link className="navbar_logo" to="/">
                 <img src={logo} alt="React Dashboard" />
                 <h4>React Dashboard</h4>
-              </div>
+              </Link>
+              <ul className="navbar_menu">
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              </ul>
             </Header>
             <Routes/>
           </Layout>

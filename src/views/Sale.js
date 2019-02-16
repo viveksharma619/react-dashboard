@@ -1,41 +1,27 @@
 import React, { Component } from 'react';
 import {Layout, Table}  from 'antd';
+import { dataSource, columns} from '../data';
 
 const { Content } = Layout;
 
-const dataSource = [{
-    key: '1',
-    name: 'Mike',
-    age: 32,
-    address: '10 Downing Street'
-  }, {
-    key: '2',
-    name: 'John',
-    age: 42,
-    address: '10 Downing Street'
-  }];
-  
-  const columns = [{
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-  }, {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-  }, {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  }];
-  
 
 class Sales extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            name: 'Vivek',
+            columns,
+            dataSource
+        };
+    }
+    
     render(){
         return (
             <Layout>
                 <Content className="content_container">
-                    <Table dataSource={dataSource} columns={columns} />
+                <div className="home_card">
+                        <Table dataSource={this.state.dataSource} columns={this.state.columns} />
+                    </div>
                 </Content>
             </Layout>
         );

@@ -3,11 +3,24 @@
     text-transform: uppercase;
     display: inline;
     font-weight: 800;
+    text-decoration: none;
 }
 .navbar_logo img{
     width: 45px;
     height: auto;
     animation: rotate infinite 20s linear;
+}
+
+.navbar_menu ul{
+    list-style: none;
+}
+.navbar_menu li {
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.navbar_menu li a{
+    display: inline;
+    color: #fff;
 }
 .ant-list-item-meta-content{
     cursor: pointer;
@@ -40,4 +53,28 @@
     margin: 20px;
     min-height: 100vh;
     padding: 20px;
+}
+.home_card{
+    border: 1px solid #bfbfbf;
+    margin: 10px;
+    min-height: 270px;
+}
+
+.center_heading{
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+/* Log In Form */
+.login_form{
+    padding: 20px;
+}
+.login_form-forgot {
+    float: right;
+}
+.login_form-button {
+    width: 100%;
 }
