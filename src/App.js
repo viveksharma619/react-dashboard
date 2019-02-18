@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
-  Link
+  Link,
+  Redirect
 } from 'react-router-dom';
-
 import Routes from './Route';
 
-import logo from './react-logo.png';
+import {connect} from 'react-redux';
 
-import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
+import logo from './react-logo.png';
+import 'antd/dist/antd.css'; 
 import './App.css';
 
 import {Layout} from 'antd';
 
-const {Header} = Layout;
-
+const { Header } = Layout;
 class App extends Component {
+  isAuthenticated(){
+    if(!this.props.user){
+      return(
+        <Redirect to="/login"></Redirect>
+      )
+    }
+  }
   render() {
     return (
       <div>
         <Router>
           <Layout>
+            {this.isAuthenticated()}
             <Header>
               <Link className="navbar_logo" to="/">
                 <img src={logo} alt="React Dashboard" />
@@ -39,5 +47,10 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = ({ user }) => {
+ return {
+   user: user.user
+ }
+}
 
-export default App;
+export default connect(mapStateToProps)(App);

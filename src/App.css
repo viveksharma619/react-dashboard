@@ -11,8 +11,9 @@
     animation: rotate infinite 20s linear;
 }
 
-.navbar_menu ul{
+.navbar_menu{
     list-style: none;
+    float: right;
 }
 .navbar_menu li {
     font-weight: 500;

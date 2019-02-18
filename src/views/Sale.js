@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Layout, Table}  from 'antd';
 import { dataSource, columns} from '../data';
-
 const { Content } = Layout;
 
 

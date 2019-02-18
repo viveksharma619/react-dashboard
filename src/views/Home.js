@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Layout, List, Row, Col, Table } from 'antd';
 import {Bar, Doughnut} from 'react-chartjs-2';
 
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { columns, data, dataSource ,doughnutData, barData } from '../data';
 
 import './Home.css';
