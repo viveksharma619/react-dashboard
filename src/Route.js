@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import Home from './views/Home';
 import Login from './views/Login';
-import Sale from './views/Sale';
+import AuthRoute from './util/AuthRoute';
+import Main from './views/Main';
 
-import {Route} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+
+import { Layout } from 'antd';
+
+const { Content } = Layout;
 
 class Routes extends Component{
     render(){
         return(
-            <div>
-                <Route exact path="/" component={Home}/>
-                <Route path="/login" component={Login}/>
-                <Route path="/sale" component={Sale}/>
-            </div>
+            <Content>
+                <Switch>
+                    <Route path="/login" component={Login}/>
+                    <AuthRoute auth={this.props.auth} path="/" component={Main}/>
+                </Switch>
+            </Content>
         )
     }
 }

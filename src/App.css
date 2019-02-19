@@ -18,6 +18,8 @@
 .navbar_menu li {
     font-weight: 500;
     text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
 }
 .navbar_menu li a{
     display: inline;

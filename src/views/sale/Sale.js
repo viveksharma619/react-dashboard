@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import {Layout, Table}  from 'antd';
-import { dataSource, columns} from '../data';
-const { Content } = Layout;
+import { dataSource, columns} from '../../data';
 
 
 class Sales extends Component{
     constructor(props){
         super(props);
         this.state = {
-            name: 'Vivek',
             columns,
             dataSource
         };
@@ -16,13 +14,11 @@ class Sales extends Component{
     
     render(){
         return (
-            <Layout>
-                <Content className="content_container">
+            <div className="content_container">
                 <div className="home_card">
-                        <Table dataSource={this.state.dataSource} columns={this.state.columns} />
-                    </div>
-                </Content>
-            </Layout>
+                    <Table dataSource={this.state.dataSource} columns={this.state.columns} />
+                </div>
+            </div>
         );
     }
 }

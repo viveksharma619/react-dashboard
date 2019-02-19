@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Link,
-  Redirect
 } from 'react-router-dom';
 import Routes from './Route';
 
@@ -12,38 +11,40 @@ import logo from './react-logo.png';
 import 'antd/dist/antd.css'; 
 import './App.css';
 
-import {Layout} from 'antd';
+import {logout} from './action/user.actions';
 
+import { Layout } from 'antd';
 const { Header } = Layout;
+
 class App extends Component {
-  isAuthenticated(){
-    if(!this.props.user){
-      return(
-        <Redirect to="/login"></Redirect>
-      )
-    }
-  }
+
   render() {
     return (
-      <div>
-        <Router>
+      <Router>
+        <div>
           <Layout>
-            {this.isAuthenticated()}
             <Header>
               <Link className="navbar_logo" to="/">
                 <img src={logo} alt="React Dashboard" />
                 <h4>React Dashboard</h4>
               </Link>
               <ul className="navbar_menu">
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
+                { 
+                  !this.props.user ? 
+                  <li>
+                    <Link to="/login">Login</Link>
+                  </li> 
+                  :
+                  <li onClick={()=> { this.props.logout() }}>Logout</li>
+                }  
               </ul>
             </Header>
-            <Routes/>
+            </Layout>
+          <Layout>
+            <Routes auth={this.props.user}/>
           </Layout>
-        </Router>
-      </div>
+          </div>
+      </Router>
     );
   }
 }
@@ -53,4 +54,7 @@ const mapStateToProps = ({ user }) => {
  }
 }
 
-export default connect(mapStateToProps)(App);
+const mapActionsToProps = {
+  logout
+}
+export default connect(mapStateToProps, mapActionsToProps)(App);
